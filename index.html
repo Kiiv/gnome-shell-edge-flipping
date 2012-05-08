@@ -4,7 +4,7 @@
   <head>
     <meta charset='utf-8' />
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="GNOME Shell Edge-Flipping : GNOME Shell extension to use reactive edges to switch workspaces" />
+    <meta name="description" content="GNOME Shell Edge-Flipping : GNOME Shell extension that provides reactive screen edges to switch between workspaces" />
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
@@ -19,7 +19,7 @@
           <a id="forkme_banner" href="https://github.com/aguslr/gnome-shell-edge-flipping">Fork Me on GitHub</a>
 
           <h1 id="project_title">GNOME Shell Edge-Flipping</h1>
-          <h2 id="project_tagline">GNOME Shell extension to use reactive edges to switch workspaces</h2>
+          <h2 id="project_tagline">GNOME Shell extension that provides reactive screen edges to switch between workspaces</h2>
 
           <section id="downloads">
             <a class="zip_download_link" href="https://github.com/aguslr/gnome-shell-edge-flipping/zipball/master">Download this project as a .zip file</a>
@@ -33,128 +33,113 @@
       <section id="main_content" class="inner">
 
 <h1>
-  <a href="#gnome-shell-edge-flipping" class="anchor" name="gnome-shell-edge-flipping">GNOME Shell Edge-Flipping</a></h1>
+  <a href="#gnome-shell-edge-flipping" class="anchor" name="gnome-shell-edge-flipping"></a>GNOME Shell Edge-Flipping</h1>
 
 <h2>
-  <a href="#about" class="anchor" name="about">About</a></h2>
+  <a href="#about" class="anchor" name="about"></a>About</h2>
 
 <p><a href="http://aguslr.github.com/gnome-shell-edge-flipping/">GNOME Shell Edge-Flipping</a> is a <a href="https://live.gnome.org/GnomeShell/Extensions">GNOME Shell extension</a> that provides reactive screen edges to switch between different workspaces, similar to what is provided by <a href="http://catmur.co.uk/brightside/">Brightside</a>, by some plugin in Compiz or natively in other Desktop Environments like Xfce. Here you can see a video:</p>
 
 <p><center><iframe width="560" height="315" src="https://www.youtube.com/embed/6BSyOEjRyTc" frameborder="0" allowfullscreen></iframe></center></p>
 
 <h2>
-  <a href="#installation" class="anchor" name="installation">Installation</a></h2>
+  <a href="#installation" class="anchor" name="installation"></a>Installation</h2>
 
 <h3>
-  <a href="#gnome-shell-extensions-repository" class="anchor" name="gnome-shell-extensions-repository">GNOME Shell Extensions repository</a></h3>
+  <a href="#gnome-shell-extensions-repository" class="anchor" name="gnome-shell-extensions-repository"></a>GNOME Shell Extensions repository</h3>
 
 <p>You can find this extension at the <a href="https://extensions.gnome.org/extension/275/edge-flipping/">GNOME Shell Extensions website</a>. Using the website is the preferred method since all extensions are reviewed prior to their release and you'll find lots of other cool extensions.</p>
 
 <h3>
-  <a href="#get-latest-version-using-git" class="anchor" name="get-latest-version-using-git">Get latest version using Git</a></h3>
+  <a href="#get-latest-version-using-git" class="anchor" name="get-latest-version-using-git"></a>Get latest version using Git</h3>
 
 <p>To get the extension directly from my repository, you can use Git to clone it:</p>
 
 <div class="highlight">
-<pre>git clone git://github.com/aguslr/gnome-shell-edge-flipping.git ~/.local/share/gnome-shell/extensions/edge-flipping@aguslr.github.com
-</pre>
+<pre>git clone git://github.com/aguslr/gnome-shell-edge-flipping.git ~/.local/share/gnome-shell/extensions/edge-flipping@aguslr.github.com</pre>
 </div>
 
 
 <h3>
-  <a href="#get-latest-version-without-git" class="anchor" name="get-latest-version-without-git">Get latest version without Git</a></h3>
+  <a href="#get-latest-version-without-git" class="anchor" name="get-latest-version-without-git"></a>Get latest version without Git</h3>
 
 <p>If you don't have Git, you can just download the extension in a tarball and extract it in the appropiate directory:</p>
 
 <div class="highlight">
-<pre>mkdir ~/.local/share/gnome-shell/extensions <span class="o">&amp;&amp;</span> <span class="nb">cd</span> <span class="nv">$_</span> <span class="o">&amp;&amp;</span> wget https://github.com/aguslr/gnome-shell-edge-flipping/tarball/master -O - | tar -xzv --strip-components 1
-</pre>
+<pre>mkdir ~/.local/share/gnome-shell/extensions/edge-flipping@aguslr.github.com <span class="o">&amp;&amp;</span> <span class="nb">cd</span> <span class="nv">$_</span> <span class="o">&amp;&amp;</span> wget https://github.com/aguslr/gnome-shell-edge-flipping/tarball/master -O - | tar -xzv --strip-components 1</pre>
 </div>
 
 
 <h2>
-  <a href="#configuration" class="anchor" name="configuration">Configuration</a></h2>
+  <a href="#configuration" class="anchor" name="configuration"></a>Configuration</h2>
 
 <p>To customize the behaviour of the extension, you can open the file <code>extension.js</code> on a text editor and edit the following lines as explained below:</p>
 
 <div class="highlight">
 <pre><span class="c1">// Declare some parameters</span>
 <span class="kr">const</span> <span class="nx">CONTINUE</span> <span class="o">=</span> <span class="kc">false</span>      <span class="c1">// boolean</span>
-
 <span class="kr">const</span> <span class="nx">ENABLE_HORIZ</span> <span class="o">=</span> <span class="kc">false</span>  <span class="c1">// boolean</span>
 <span class="kr">const</span> <span class="nx">DELAY_TIMEOUT</span> <span class="o">=</span> <span class="mi">300</span>   <span class="c1">// milliseconds</span>
-
 <span class="kr">const</span> <span class="nx">OFFSET</span> <span class="o">=</span> <span class="mi">5</span>            <span class="c1">// percentage</span>
 <span class="kr">const</span> <span class="nx">SIZE</span> <span class="o">=</span> <span class="mi">1</span>              <span class="c1">// pixels</span>
-
-<span class="kr">const</span> <span class="nx">OPACITY</span> <span class="o">=</span> <span class="mi">0</span>           <span class="c1">// 0-255</span>
-</pre>
+<span class="kr">const</span> <span class="nx">OPACITY</span> <span class="o">=</span> <span class="mi">0</span>           <span class="c1">// 0-255</span></pre>
 </div>
 
 
 <h3>
-  <a href="#continuous-flipping" class="anchor" name="continuous-flipping">Continuous flipping</a></h3>
+  <a href="#continuous-flipping" class="anchor" name="continuous-flipping"></a>Continuous flipping</h3>
 
 <p>By default, once an edge is activated, it will only switch to the adjacent workspace. To switch to the one after that, the edge needs to be reactivated. To change this you can set the following line to <code>true</code>:</p>
 
 <div class="highlight">
-<pre><span class="kr">const</span> <span class="nx">CONTINUE</span> <span class="o">=</span> <span class="kc">true</span>       <span class="c1">// boolean</span>
-
-</pre>
+<pre><span class="kr">const</span> <span class="nx">CONTINUE</span> <span class="o">=</span> <span class="kc">true</span>       <span class="c1">// boolean</span></pre>
 </div>
 
 
 <h3>
-  <a href="#lateral-edges" class="anchor" name="lateral-edges">Lateral edges</a></h3>
+  <a href="#lateral-edges" class="anchor" name="lateral-edges"></a>Lateral edges</h3>
 
 <p>Also, by default both left and right edges are disabled since workspaces are laid out vertically in GNOME shell and it might be confusing. To enable them, just change the following line to <code>true</code>:</p>
 
 <div class="highlight">
-<pre><span class="kr">const</span> <span class="nx">ENABLE_HORIZ</span> <span class="o">=</span> <span class="kc">true</span>   <span class="c1">// boolean</span>
-
-</pre>
+<pre><span class="kr">const</span> <span class="nx">ENABLE_HORIZ</span> <span class="o">=</span> <span class="kc">true</span>   <span class="c1">// boolean</span></pre>
 </div>
 
 
 <p>Have in mind that, at the moment, the actions to switch to left/right are mapped to up/down, therefore the left and right edges will behave exactly like the top and bottom edges.</p>
 
 <h3>
-  <a href="#delay" class="anchor" name="delay">Delay</a></h3>
+  <a href="#delay" class="anchor" name="delay"></a>Delay</h3>
 
 <p>There is a delay between activating the edge and switching to the next workspace. This is set to avoid accidentally changing workspace when we were just trying to drag the scroll bar on a maximized window. By default it is set to 300 milliseconds but it can be changed by editing this line:</p>
 
 <div class="highlight">
-<pre><span class="kr">const</span> <span class="nx">DELAY_TIMEOUT</span> <span class="o">=</span> <span class="mi">300</span>   <span class="c1">// milliseconds</span>
-
-</pre>
+<pre><span class="kr">const</span> <span class="nx">DELAY_TIMEOUT</span> <span class="o">=</span> <span class="mi">300</span>   <span class="c1">// milliseconds</span></pre>
 </div>
 
 
 <p>If continuous flipping is enabled, this parameter also controls the delay between each workspace change. If it's too fast, increase the amount.</p>
 
 <h3>
-  <a href="#offset" class="anchor" name="offset">Offset</a></h3>
+  <a href="#offset" class="anchor" name="offset"></a>Offset</h3>
 
 <p>There is an offset to prevent the whole extension of the edge from being reactive, again to avoid unintented workspace switching and overlapping other actions (i.e. activating overview or activating the message tray).</p>
 
 <p>By default it is set to 5% of the length of the edge from both ends, that is, only the middle 90% of the edge is used. This can be changed in the following line:</p>
 
 <div class="highlight">
-<pre><span class="kr">const</span> <span class="nx">OFFSET</span> <span class="o">=</span> <span class="mi">5</span>            <span class="c1">// percentage</span>
-</pre>
+<pre><span class="kr">const</span> <span class="nx">OFFSET</span> <span class="o">=</span> <span class="mi">5</span>            <span class="c1">// percentage</span></pre>
 </div>
 
 
 <h3>
-  <a href="#size-and-opacity-of-reactive-edges" class="anchor" name="size-and-opacity-of-reactive-edges">Size and opacity of reactive edges</a></h3>
+  <a href="#size-and-opacity-of-reactive-edges" class="anchor" name="size-and-opacity-of-reactive-edges"></a>Size and opacity of reactive edges</h3>
 
 <p>You can change the size of the edge which is 1 pixel. Also, you can change the opacity so you can a visual reference. These two lines would have to be edited accordingly:</p>
 
 <div class="highlight">
 <pre><span class="kr">const</span> <span class="nx">SIZE</span> <span class="o">=</span> <span class="mi">1</span>              <span class="c1">// pixels</span>
-<span class="kr">const</span> <span class="nx">OPACITY</span> <span class="o">=</span> <span class="mi">0</span>           <span class="c1">// 0-255</span>
-
-</pre>
+<span class="kr">const</span> <span class="nx">OPACITY</span> <span class="o">=</span> <span class="mi">0</span>           <span class="c1">// 0-255</span></pre>
 </div>
 
 
@@ -166,7 +151,7 @@
     <!-- FOOTER  -->
     <div id="footer_wrap" class="outer">
       <footer class="inner">
-        <p class="copyright">Gnome-shell-edge-flipping maintained by <a href="https://github.com/aguslr">aguslr</a></p>
+        <p class="copyright">GNOME Shell Edge-Flipping maintained by <a href="https://github.com/aguslr">aguslr</a></p>
         <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
       </footer>
     </div>
