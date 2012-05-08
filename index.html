@@ -33,25 +33,25 @@
       <section id="main_content" class="inner">
 
 <h1>
-<a href="#gnome-shell-edge-flipping" class="anchor" name="gnome-shell-edge-flipping"/>GNOME Shell Edge-Flipping</h1>
+  <a href="#gnome-shell-edge-flipping" class="anchor" name="gnome-shell-edge-flipping">GNOME Shell Edge-Flipping</a></h1>
 
 <h2>
-<a href="#about" class="anchor" name="about"/>About</h2>
+  <a href="#about" class="anchor" name="about">About</a></h2>
 
 <p><a href="http://aguslr.github.com/gnome-shell-edge-flipping/">GNOME Shell Edge-Flipping</a> is a <a href="https://live.gnome.org/GnomeShell/Extensions">GNOME Shell extension</a> that provides reactive screen edges to switch between different workspaces, similar to what is provided by <a href="http://catmur.co.uk/brightside/">Brightside</a>, by some plugin in Compiz or natively in other Desktop Environments like Xfce. Here you can see a video:</p>
 
 <p><center><iframe width="560" height="315" src="https://www.youtube.com/embed/6BSyOEjRyTc" frameborder="0" allowfullscreen></iframe></center></p>
 
 <h2>
-<a href="#installation" class="anchor" name="installation"/>Installation</h2>
+  <a href="#installation" class="anchor" name="installation">Installation</a></h2>
 
 <h3>
-<a href="#gnome-shell-extensions-repository" class="anchor" name="gnome-shell-extensions-repository"/>GNOME Shell Extensions repository</h3>
+  <a href="#gnome-shell-extensions-repository" class="anchor" name="gnome-shell-extensions-repository">GNOME Shell Extensions repository</a></h3>
 
 <p>You can find this extension at the <a href="https://extensions.gnome.org/extension/275/edge-flipping/">GNOME Shell Extensions website</a>. Using the website is the preferred method since all extensions are reviewed prior to their release and you'll find lots of other cool extensions.</p>
 
 <h3>
-<a href="#get-latest-version-using-git" class="anchor" name="get-latest-version-using-git"/>Get latest version using Git</h3>
+  <a href="#get-latest-version-using-git" class="anchor" name="get-latest-version-using-git">Get latest version using Git</a></h3>
 
 <p>To get the extension directly from my repository, you can use Git to clone it:</p>
 
@@ -62,7 +62,7 @@
 
 
 <h3>
-<a href="#get-latest-version-without-git" class="anchor" name="get-latest-version-without-git"/>Get latest version without Git</h3>
+  <a href="#get-latest-version-without-git" class="anchor" name="get-latest-version-without-git">Get latest version without Git</a></h3>
 
 <p>If you don't have Git, you can just download the extension in a tarball and extract it in the appropiate directory:</p>
 
@@ -73,7 +73,7 @@
 
 
 <h2>
-<a href="#configuration" class="anchor" name="configuration"/>Configuration</h2>
+  <a href="#configuration" class="anchor" name="configuration">Configuration</a></h2>
 
 <p>To customize the behaviour of the extension, you can open the file <code>extension.js</code> on a text editor and edit the following lines as explained below:</p>
 
@@ -93,7 +93,7 @@
 
 
 <h3>
-<a href="#continuous-flipping" class="anchor" name="continuous-flipping"/>Continuous flipping</h3>
+  <a href="#continuous-flipping" class="anchor" name="continuous-flipping">Continuous flipping</a></h3>
 
 <p>By default, once an edge is activated, it will only switch to the adjacent workspace. To switch to the one after that, the edge needs to be reactivated. To change this you can set the following line to <code>true</code>:</p>
 
@@ -105,7 +105,7 @@
 
 
 <h3>
-<a href="#lateral-edges" class="anchor" name="lateral-edges"/>Lateral edges</h3>
+  <a href="#lateral-edges" class="anchor" name="lateral-edges">Lateral edges</a></h3>
 
 <p>Also, by default both left and right edges are disabled since workspaces are laid out vertically in GNOME shell and it might be confusing. To enable them, just change the following line to <code>true</code>:</p>
 
@@ -119,7 +119,7 @@
 <p>Have in mind that, at the moment, the actions to switch to left/right are mapped to up/down, therefore the left and right edges will behave exactly like the top and bottom edges.</p>
 
 <h3>
-<a href="#delay" class="anchor" name="delay"/>Delay</h3>
+  <a href="#delay" class="anchor" name="delay">Delay</a></h3>
 
 <p>There is a delay between activating the edge and switching to the next workspace. This is set to avoid accidentally changing workspace when we were just trying to drag the scroll bar on a maximized window. By default it is set to 300 milliseconds but it can be changed by editing this line:</p>
 
@@ -133,7 +133,7 @@
 <p>If continuous flipping is enabled, this parameter also controls the delay between each workspace change. If it's too fast, increase the amount.</p>
 
 <h3>
-<a href="#offset" class="anchor" name="offset"/>Offset</h3>
+  <a href="#offset" class="anchor" name="offset">Offset</a></h3>
 
 <p>There is an offset to prevent the whole extension of the edge from being reactive, again to avoid unintented workspace switching and overlapping other actions (i.e. activating overview or activating the message tray).</p>
 
@@ -146,7 +146,7 @@
 
 
 <h3>
-<a href="#size-and-opacity-of-reactive-edges" class="anchor" name="size-and-opacity-of-reactive-edges"/>Size and opacity of reactive edges</h3>
+  <a href="#size-and-opacity-of-reactive-edges" class="anchor" name="size-and-opacity-of-reactive-edges">Size and opacity of reactive edges</a></h3>
 
 <p>You can change the size of the edge which is 1 pixel. Also, you can change the opacity so you can a visual reference. These two lines would have to be edited accordingly:</p>
 
