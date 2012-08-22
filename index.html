@@ -98,9 +98,20 @@ wget https://github.com/aguslr/gnome-shell-edge-flipping/tarball/master -O - | t
 
 
 <h3>
-  <a href="#lateral-edges" class="anchor" name="lateral-edges"></a>Lateral edges</h3>
+<a name="vertical-edges" class="anchor" href="#vertical-edges"></a>Vertical edges</h3>
 
-<p>Also, by default both left and right edges are disabled since workspaces are laid out vertically in GNOME shell and it might be confusing. To enable them, just change the following line to <code>true</code>:</p>
+<p>Also, by default only the top and bottom edges are enabled since workspaces are laid out vertically in GNOME shell and this is less confusing. To disable them, just change the following line to <code>false</code>:</p>
+
+<div class="highlight">
+<pre><span class="kr">const</span> <span class="nx">ENABLE_VERT</span> <span class="o">=</span> <span class="kc">false</span>   <span class="c1">// boolean</span>
+</pre></div>
+
+<p>Remember to at least enable either the vertical or the lateral edges, otherwise the extension will have no effect.</p>
+
+<h3>
+<a name="lateral-edges" class="anchor" href="#lateral-edges"></a>Lateral edges</h3>
+
+<p>To enable lateral edges, just change the following line to <code>true</code>:</p>
 
 <div class="highlight">
 <pre><span class="kr">const</span> <span class="nx">ENABLE_HORIZ</span> <span class="o">=</span> <span class="kc">true</span>   <span class="c1">// boolean</span></pre>
