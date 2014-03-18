@@ -80,7 +80,7 @@ const EdgeFlipping = new Lang.Class({
             reactive: this._settings.get_boolean("enable-horizontal")
         });
 
-        for (edge in this._edges) {
+        for (var edge in this._edges) {
             this._edges[edge].connect ('enter-event', Lang.bind (this, this._switchWorkspace));
             this._edges[edge].connect ('leave-event', Lang.bind (this, this._removeTimeout));
             this._edges[edge].opacity = this._settings.get_int("opacity");
@@ -136,20 +136,25 @@ const EdgeFlipping = new Lang.Class({
 
     _switchWorkspace: function (actor, event) {
         this._initialDelayTimeoutId = Mainloop.timeout_add (this._settings.get_int("delay-timeout"), Lang.bind(this, function() {
+           var ws;
+           let activews = global.screen.get_active_workspace();
             switch (actor.name) {
                 case "top-edge":
-                    Main.wm.actionMoveWorkspace(Meta.MotionDirection.UP);
+                    ws = activews.get_neighbor(Meta.MotionDirection.UP);
                     break;
                 case "bottom-edge":
-                    Main.wm.actionMoveWorkspace(Meta.MotionDirection.DOWN);
+                    ws = activews.get_neighbor(Meta.MotionDirection.DOWN);
                     break;
                 case "right-edge":
-                    Main.wm.actionMoveWorkspace(Meta.MotionDirection.RIGHT);
+                    ws = activews.get_neighbor(Meta.MotionDirection.RIGHT);
                     break;
                 case "left-edge":
-                    Main.wm.actionMoveWorkspace(Meta.MotionDirection.LEFT);
+                    ws = activews.get_neighbor(Meta.MotionDirection.LEFT);
                     break;
             };
+           if( ws != null ) {
+               Main.wm.actionMoveWorkspace(ws);
+           }   
             // Check if we are in the last workspace on either end
             // and continuous switching is enabled
             let currentWorkspace = global.screen.get_active_workspace_index();
@@ -188,7 +193,7 @@ const EdgeFlipping = new Lang.Class({
         // Remove timeout
         this._removeTimeout();
         // Remove and destroy all edges that were enabled
-        for (edge in this._edges) {
+        for (var edge in this._edges) {
             Main.layoutManager.removeChrome (this._edges[edge]);
             this._edges[edge].destroy();
         }
